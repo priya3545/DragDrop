@@ -1,0 +1,12 @@
+.container {
+  white-space: nowrap;
+  overflow-y: hidden;
+  padding-left: 50px;
+  min-height: 600px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.react-beautiful-dnd-draggable {
+  transition: transform 0.01s !important;
+}

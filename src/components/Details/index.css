@@ -1,0 +1,10 @@
+.profile-photo img {
+  border-radius: 50%;
+}
+
+.card-part {
+  height: 160px;
+  width: 160px;
+  margin-left: 20px;
+  cursor: pointer;
+}
