@@ -12,7 +12,8 @@ const createChildNode = (item, id) => {
         <Draggable key={data.id} draggableId={`${data.id}`} index={data.id}>
           {(provided) => {
             return (
-              <Fragment
+              <div
+                className="node-data"
                 ref={provided.innerRef}
                 {...provided.draggableProps}
                 {...provided.dragHandleProps}
@@ -25,12 +26,13 @@ const createChildNode = (item, id) => {
                       role={data.employeeRole}
                       id={data.id}
                       profile={data.profile}
+                      bgColor={data.color}
                     />
                   }
                 >
                   {createChildNode(item, data.id)}
                 </TreeNode>
-              </Fragment>
+              </div>
             );
           }}
         </Draggable>
@@ -52,6 +54,7 @@ const CreateOrgStructure = ({ data, id }) => {
                 role={item.employeeRole}
                 id={item.id}
                 profile={item.profile}
+                bgColor={item.color}
               />
             }
           >

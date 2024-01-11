@@ -2,7 +2,7 @@ import React from "react";
 import "./index.css";
 import Footer from "../Footer/index";
 
-const NodeData = ({ name, role, id, profile }) => {
+const NodeData = ({ name, role, id, profile, bgColor }) => {
   return (
     <div className="card-part" id={id} key={id}>
       <div className="profile-photo">
@@ -10,7 +10,7 @@ const NodeData = ({ name, role, id, profile }) => {
       </div>
       <div className="content">
         {name + " "}-{" " + role}
-        <Footer />
+        <Footer bgColor={bgColor} />
       </div>
     </div>
   );
