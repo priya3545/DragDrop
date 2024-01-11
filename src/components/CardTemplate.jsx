@@ -4,64 +4,79 @@ import { Tree, TreeNode } from "react-organizational-chart";
 import NodeData from "./Details";
 import "./index.css";
 
-const createChildNode = (item) => {
-  return item?.map((data) => {
-    return (
-      <Draggable key={data.id} draggableId={`${data.id}`} index={data.id}>
-        {(provided) => (
-          <div
-            ref={provided.innerRef}
-            {...provided.draggableProps}
-            {...provided.dragHandleProps}
-          >
-            <TreeNode
-              key={data.id}
-              label={
-                <NodeData
-                  name={data.employeeName}
-                  role={data.employeeRole}
-                  id={data.id}
-                  profile={data.profile}
-                />
-              }
-            >
-              {createChildNode(data.children)}
-            </TreeNode>
-          </div>
-        )}
-      </Draggable>
-    );
-  });
+const createChildNode = (item, id) => {
+  return item
+    ?.filter((value) => value.parent === id)
+    ?.map((data) => {
+      return (
+        <Draggable key={data.id} draggableId={`${data.id}`} index={data.id}>
+          {(provided) => {
+            return (
+              <Fragment
+                ref={provided.innerRef}
+                {...provided.draggableProps}
+                {...provided.dragHandleProps}
+              >
+                <TreeNode
+                  key={data.id}
+                  label={
+                    <NodeData
+                      name={data.employeeName}
+                      role={data.employeeRole}
+                      id={data.id}
+                      profile={data.profile}
+                    />
+                  }
+                >
+                  {createChildNode(item, data.id)}
+                </TreeNode>
+              </Fragment>
+            );
+          }}
+        </Draggable>
+      );
+    });
 };
 
-const CreateOrgStructure = ({ data }) => {
-  return data?.map((item) => {
-    return (
-      <>
-        <Tree
-          key={item.id}
-          label={
-            <NodeData
-              name={item.employeeName}
-              role={item.employeeRole}
-              id={item.id}
-              profile={item.profile}
-            />
-          }
-        >
-          {createChildNode(item.children)}
-        </Tree>
-      </>
-    );
-  });
+const CreateOrgStructure = ({ data, id }) => {
+  return data
+    ?.filter((value) => value.parent === id)
+    ?.map((item) => {
+      return (
+        <>
+          <Tree
+            key={item.id}
+            label={
+              <NodeData
+                name={item.employeeName}
+                role={item.employeeRole}
+                id={item.id}
+                profile={item.profile}
+              />
+            }
+          >
+            {createChildNode(data, item.id)}
+          </Tree>
+        </>
+      );
+    });
 };
 
 export const CardTemplate = ({ data }) => {
   const [dataState, setDataState] = useState(data);
 
   const onDragEnd = (result) => {
-    if (!result.destination) return;
     console.log(result);
+    const { destination, source } = result;
+    if (!destination || destination.index === source.index) return;
+
+    let items = dataState.map((value) => {
+      if (value.id === source.index) {
+        value = { ...value, parent: destination.index };
+      }
+      return value;
+    });
+    setDataState(items);
   };
 
   return (
@@ -70,7 +85,7 @@ export const CardTemplate = ({ data }) => {
         <Droppable droppableId={"Org-Chart"} type="Tree">
           {(provided) => (
             <div ref={provided.innerRef} {...provided.droppableProps}>
-              <CreateOrgStructure data={dataState} />
+              <CreateOrgStructure data={dataState} id={null} />
               {provided.placeholder}
             </div>
           )}
