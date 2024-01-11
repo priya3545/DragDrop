@@ -11,10 +11,9 @@ const Footer = () => {
   const listImages = [callIcon, msgIcon, emailIcon];
   return (
     <div className="contact-icons" style={{ backgroundColor: randomColor() }}>
-      {listImages.map((data, index) => {
+      {listImages.map((data) => {
         return (
           <img
-            key={index}
             className="image-space"
             src={data}
             width={25}

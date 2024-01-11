@@ -3,8 +3,12 @@
 }
 
 .card-part {
-  height: 160px;
-  width: 160px;
-  margin-left: 20px;
   cursor: pointer;
+  position: relative;
+  margin: auto;
+  width: 150px;
+}
+
+.content {
+  line-height: 25px;
 }

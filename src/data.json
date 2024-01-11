@@ -5,51 +5,61 @@
     "employeeRole": "CEO",
     "id": 1,
     "parent": null,
-    "isLast": false
-  },
-  {
-    "profile": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
-    "employeeName": "Vishnu",
-    "employeeRole": "CCO",
-    "id": 2,
-    "parent": 1,
+    "isVisited": false,
     "isLast": false,
-    "isVisited": false
-  },
-  {
-    "profile": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
-    "employeeName": "Suman",
-    "employeeRole": "VP",
-    "id": 3,
-    "parent": 2,
-    "isLast": false,
-    "isVisited": false
-  },
-  {
-    "profile": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
-    "employeeName": "Dk",
-    "employeeRole": "Product Manager",
-    "id": 4,
-    "parent": 3,
-    "isLast": false,
-    "isVisited": false
-  },
-  {
-    "profile": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
-    "employeeName": "Nizam",
-    "employeeRole": "Senior UI",
-    "id": 5,
-    "parent": 3,
-    "isLast": false,
-    "isVisited": false
-  },
-  {
-    "profile": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
-    "employeeName": "Naveen",
-    "employeeRole": "HR",
-    "id": 6,
-    "parent": 2,
-    "isLast": false,
-    "isVisited": false
+    "children": [
+      {
+        "profile": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
+        "employeeName": "Vishnu",
+        "employeeRole": "CCO",
+        "id": 2,
+        "parent": 1,
+        "isLast": false,
+        "isVisited": false,
+        "children": [
+          {
+            "profile": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
+            "employeeName": "Naveen",
+            "employeeRole": "HR",
+            "id": 3,
+            "parent": 2,
+            "isLast": false,
+            "isVisited": false,
+            "children": []
+          },
+          {
+            "profile": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
+            "employeeName": "Suman",
+            "employeeRole": "VP",
+            "id": 4,
+            "parent": 2,
+            "isLast": false,
+            "isVisited": false,
+            "children": [
+              {
+                "profile": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
+                "employeeName": "Dk",
+                "employeeRole": "Product Manager",
+                "id": 5,
+                "parent": 3,
+                "isLast": false,
+                "isVisited": false,
+                "children": [
+                  {
+                    "profile": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
+                    "employeeName": "Nizam",
+                    "employeeRole": "Senior UI",
+                    "id": 6,
+                    "parent": 4,
+                    "isLast": false,
+                    "isVisited": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]

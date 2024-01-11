@@ -1,6 +1,5 @@
 .contact-icons {
   padding: 4px;
-  position: relative;
   border-radius: 16px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -8,5 +7,5 @@
 }
 
 .image-space {
-  padding: 0px 8px 0px 15px;
+  padding: 0px 8px 0px 8px;
 }
