@@ -57,5 +57,25 @@
     "isLast": false,
     "isVisited": false,
     "color": "rgb(232, 163, 113)"
+  },
+  {
+    "profile": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
+    "employeeName": "Sugan",
+    "employeeRole": "AHR",
+    "id": 7,
+    "parent": 3,
+    "isLast": false,
+    "isVisited": false,
+    "color": "rgb(344, 153, 176)"
+  },
+  {
+    "profile": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
+    "employeeName": "Viru",
+    "employeeRole": "CC",
+    "id": 8,
+    "parent": 2,
+    "isLast": false,
+    "isVisited": false,
+    "color": "rgb(604, 252, 10)"
   }
 ]
