@@ -14,6 +14,11 @@
   padding: 20px 5px 0px 5px;
 }
 
+.line-style {
+  line-height: normal;
+  line-color: rgb(220, 220, 200);
+}
+
 .node-data::before,
 .node-data::after {
   content: "";
@@ -23,12 +28,12 @@
   box-sizing: border-box;
   right: 50%;
   width: 50%;
-  border-top: 1px solid black;
+  border-top: 1px solid rgb(220, 220, 220);
 }
 
 .node-data::after {
   left: 50%;
-  border-left: 1px solid black;
+  border-left: 1px solid rgb(220, 220, 220);
 }
 .node-data:first-of-type::after {
   border-radius: 5px 0px 0px 0px;
@@ -38,12 +43,12 @@
 }
 
 .node-data:last-of-type::before {
-  border-right: 1px solid black;
+  border-right: 1px solid rgb(220, 220, 220);
   border-radius: 0px 5px 0px 0px;
 }
 
 .node-data:last-of-type::after {
-  border-right: 1px solid black;
+  border-right: 1px solid rgb(220, 220, 220);
   border-radius: 0px 5px 0px 0px;
   border: 0 none;
 }
